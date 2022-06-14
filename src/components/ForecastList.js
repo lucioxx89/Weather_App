@@ -2,28 +2,32 @@ import React, { useState } from "react";
 
 const ForecastList = () => {
   const [forecastList, setForecastList] = useState([]);
+  const [city, setCity] = useState("");
 
-  fetch(
-    "https://api.openweathermap.org/data/2.5/forecast?lat=41.93012&lon=2.25486&appid=24c3564ab328937258934fca6c93f832"
-  )
+  fetch("http://localhost:3000/forecast.json")
+    // fetch(
+    //   "https://api.openweathermap.org/data/2.5/forecast?lat=41.93012&lon=2.25486&appid=24c3564ab328937258934fca6c93f832"
+    // )
     .then((response) => {
       return response.json();
     })
 
     .then((data) => {
-      const forecastArray = data.list.map((item) => {
-        return item.main.temp;
-      });
-      setForecastList(forecastArray);
-      console.log(data.list, "List from API");
+      // const forecastArray = data.list.map((item) => {
+      //   return item.main.temp;
+      // });
+      // setForecastList(forecastArray);
+      setCity(data.city.name);
+
+      console.log(data.city.name, "List from API");
     });
 
   return (
     <div>
-      <p> Weather forecast:</p>
+      <p> Weather forecast for {city}:</p>
 
       <ul>
-        <li>{forecastList}</li>
+        <li>{forecastList} </li>
       </ul>
     </div>
   );

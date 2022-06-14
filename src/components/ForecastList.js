@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const ForecastList = () => {
-  const [myList, setList] = useState([]);
+  const [forecastList, setForecastList] = useState([]);
 
   fetch(
     "https://api.openweathermap.org/data/2.5/forecast?lat=41.93012&lon=2.25486&appid=24c3564ab328937258934fca6c93f832"
@@ -11,9 +11,11 @@ const ForecastList = () => {
     })
 
     .then((data) => {
-      const array = data.list;
-      console.log(array, "array");
-      setList(array);
+      const forecastArray = data.list.map((item) => {
+        return item.main.temp;
+      });
+      setForecastList(forecastArray);
+      console.log(data.list, "List from API");
     });
 
   return (
@@ -21,7 +23,7 @@ const ForecastList = () => {
       <p> Weather forecast:</p>
 
       <ul>
-        <li>{myList.main}</li>
+        <li>{forecastList}</li>
       </ul>
     </div>
   );

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+// import WeatherDescriptionItem from "./WeatherDescriptionItem";
 
-const ForecastList = () => {
-  const [forecastList, setForecastList] = useState([]);
+const ForecastList = (props) => {
   const [city, setCity] = useState("");
+  const [forecastList, setForecastList] = useState([]);
+  const [weatherDescription, setWeatherDescription] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:3000/forecast.json")
@@ -16,6 +18,7 @@ const ForecastList = () => {
       .then((data) => {
         setCity(data.city.name);
         setForecastList(data.list);
+        setWeatherDescription(data.list);
 
         console.log(data.city.name, "List from API");
         console.log(data.list, "List from API");
@@ -27,18 +30,18 @@ const ForecastList = () => {
       <h3> Weather forecast for {city} :</h3>
       {forecastList.map((item, index) => {
         const temperature = (item.main.temp / 10).toFixed(1);
+
+        const description = item.weather[0].description;
+
         return (
           <ul key={index}>
             <li>
-              Date: {item.dt_txt} , Temperature : {temperature}
+              Date: {item.dt_txt} , Temperature : {temperature} , Description:{" "}
+              {description}
             </li>
           </ul>
         );
       })}
-
-      <ul>
-        <li>{} </li>
-      </ul>
     </div>
   );
 };
@@ -59,3 +62,9 @@ export default ForecastList;
 //  {item.temperature}
 // </li>
 // </ul>
+
+{
+  /* <WeatherDescriptionItem
+description={props.weatherDescriptionElement}
+/> */
+}

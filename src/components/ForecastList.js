@@ -14,11 +14,6 @@ const ForecastList = () => {
       })
 
       .then((data) => {
-        // const forecastArray = data.list[0].main.temp.map((item) => {
-        //   return item;
-        // });
-        // setForecastList(forecastArray);
-
         setCity(data.city.name);
         setForecastList(data.list);
 
@@ -31,10 +26,11 @@ const ForecastList = () => {
     <div>
       <h3> Weather forecast for {city} :</h3>
       {forecastList.map((item, index) => {
+        const temperature = (item.main.temp / 10).toFixed(1);
         return (
           <ul key={index}>
             <li>
-              Date: {item.dt_txt} Temperature : {item.main.temp}
+              Date: {item.dt_txt} , Temperature : {temperature}
             </li>
           </ul>
         );

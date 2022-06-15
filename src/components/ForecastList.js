@@ -33,7 +33,9 @@ const ForecastList = () => {
       {forecastList.map((item, index) => {
         return (
           <ul key={index}>
-            <li> Temperature : {item.main.temp} </li>
+            <li>
+              Date: {item.dt_txt} Temperature : {item.main.temp}
+            </li>
           </ul>
         );
       })}

@@ -6,7 +6,6 @@
 
 //   useEffect(() => {
 //     fetch(URL)
-//
 //       .then((response) => {
 //         return response.json();
 //       })
@@ -23,7 +22,7 @@
 //         const weatherDescriptionElement = item.weather[0].description;
 //         return (
 //           <div key={index}>
-//             <p> {weatherDescriptionElement} </p>
+//             <p> description={weatherDescriptionElement} </p>
 //           </div>
 //         );
 //       })}

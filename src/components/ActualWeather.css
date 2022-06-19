@@ -20,14 +20,14 @@
   font-size: 4rem;
 }
 
-.temperature {
+.actual_temperature {
   font-size: 4rem;
 }
 
 .weather_description {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   position: relative;
-  right: -90%;
+  right: -80%;
 }
 
 .humidity {
@@ -38,6 +38,10 @@
   font-size: 1.5rem;
 }
 .temp_max {
+  font-size: 1.5rem;
+}
+
+.feels_like {
   font-size: 1.5rem;
 }
 

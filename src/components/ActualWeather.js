@@ -11,6 +11,7 @@ const ActualWeather = () => {
   const [tempMin, setTempMin] = useState("");
   const [tempMax, setTempMax] = useState("");
   const [wind, setWind] = useState("");
+  const [feelsLike, setFeelsLike] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:3000/weather.json")
@@ -21,18 +22,22 @@ const ActualWeather = () => {
         console.log(data, "myData");
         setCity(data.name);
         setTemperature(data.main.temp);
-        setHumidity(data.main.humidity);
-        setWeatherDescription(data.weather[0].description);
         setTempMin(data.main.temp_min);
         setTempMax(data.main.temp_max);
-        setWind(data.wind.speed);
+        setFeelsLike(data.main.feels_like.toFixed(1));
+        setHumidity(data.main.humidity);
+        setWeatherDescription(data.weather[0].description);
+
+        setWind(data.wind.speed.toFixed());
       });
   }, []);
 
   const Temperature_Rounded = Number(temperature / 10).toFixed(1);
+  const FeelsLike_Rounded = Number(feelsLike / 10).toFixed(1);
+
   const Min_Temperature_Rounded = Number(tempMin / 10).toFixed(1);
   const Max_Temperature_Rounded = Number(tempMax / 10).toFixed(1);
-  const weatherDescription_cap_letter =
+  const weatherDescriptionCapLetter =
     weatherDescription.charAt(0).toUpperCase() + weatherDescription.slice(1);
   return (
     <>
@@ -40,10 +45,10 @@ const ActualWeather = () => {
         <div className="top_info">
           {" "}
           <div className="location">{city}</div>
-          <div className="temperature">{Temperature_Rounded}°</div>
+          <div className="actual_temperature">{Temperature_Rounded}°</div>
           <div className="weather_description">
             {" "}
-            {weatherDescription_cap_letter}{" "}
+            {weatherDescriptionCapLetter}{" "}
           </div>
         </div>
 
@@ -51,6 +56,10 @@ const ActualWeather = () => {
           <div className="humidity">
             <p>{humidity}%</p>
             <p>Humidity</p>{" "}
+          </div>
+          <div className="feels_like">
+            <p> {FeelsLike_Rounded}°</p>
+            <p> Feels like </p>
           </div>
 
           <div className="temp_min">
@@ -64,8 +73,8 @@ const ActualWeather = () => {
           </div>
 
           <div className="wind">
-            <p>{wind}m/sec</p>
-            <p>Wind</p>
+            <p>{wind}MPS</p>
+            <p>Wind Speed</p>
           </div>
         </div>
       </div>

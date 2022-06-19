@@ -10,6 +10,7 @@ const ActualWeather = () => {
   const [weatherDescription, setWeatherDescription] = useState("");
   const [tempMin, setTempMin] = useState("");
   const [tempMax, setTempMax] = useState("");
+  const [wind, setWind] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:3000/weather.json")
@@ -24,6 +25,7 @@ const ActualWeather = () => {
         setWeatherDescription(data.weather[0].description);
         setTempMin(data.main.temp_min);
         setTempMax(data.main.temp_max);
+        setWind(data.wind.speed);
       });
   }, []);
 
@@ -46,10 +48,24 @@ const ActualWeather = () => {
         </div>
 
         <div className="bottom_info">
-          <div className="humidity">Humidity: {humidity}%</div>
+          <div className="humidity">
+            <p>{humidity}%</p>
+            <p>Humidity</p>{" "}
+          </div>
 
-          <div className="temp_min_max">
-            Min: {Min_Temperature_Rounded}° / Max: {Max_Temperature_Rounded}°
+          <div className="temp_min">
+            <p>{Min_Temperature_Rounded}°</p>
+            <p>Min</p>
+          </div>
+
+          <div className="temp_max">
+            <p>{Max_Temperature_Rounded}°</p>
+            <p>Max</p>
+          </div>
+
+          <div className="wind">
+            <p>{wind}m/sec</p>
+            <p>Wind</p>
           </div>
         </div>
       </div>

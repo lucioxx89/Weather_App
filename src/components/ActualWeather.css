@@ -34,7 +34,14 @@
   font-size: 1.5rem;
 }
 
-.temp_min_max {
+.temp_min {
+  font-size: 1.5rem;
+}
+.temp_max {
+  font-size: 1.5rem;
+}
+
+.wind {
   font-size: 1.5rem;
 }
 

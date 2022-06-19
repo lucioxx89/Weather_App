@@ -1,0 +1,50 @@
+.weather_container {
+  max-width: 700px;
+  height: 700px;
+  margin: auto;
+  padding: 0 1rem;
+  position: relative;
+  top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.top_info {
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.location {
+  font-size: 4rem;
+}
+
+.temperature {
+  font-size: 4rem;
+}
+
+.weather_description {
+  font-size: 1.5rem;
+  position: relative;
+  right: -90%;
+}
+
+.humidity {
+  font-size: 1.5rem;
+}
+
+.temp_min_max {
+  font-size: 1.5rem;
+}
+
+.bottom_info {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 100%;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: paleturquoise;
+}

@@ -1,0 +1,22 @@
+.search_bar {
+  text-align: center;
+  padding: 1rem;
+}
+
+.input,
+.search_bar_button {
+  padding: 0.7rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 1px solid rgba(38, 37, 37, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.search_bar_button {
+  padding: 0.7rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 1px solid rgba(38, 37, 37, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}

@@ -60,6 +60,7 @@ const SearchForm = () => {
       </div>
       <h1> {city.name} </h1>
       <p>{country.cod}</p>
+      <p></p>
     </>
   );
 };

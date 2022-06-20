@@ -4,6 +4,8 @@ import "./searchForm.css";
 
 const SearchForm = () => {
   const [location, setLocation] = useState("");
+  const [city, setCity] = useState("");
+  const [country, setCountry] = useState("");
 
   const API_KEY = "24c3564ab328937258934fca6c93f832";
 
@@ -21,6 +23,8 @@ const SearchForm = () => {
 
       .then((data) => {
         console.log(data, "List from city API");
+        setCity(data);
+        setCountry(data);
       })
       .catch((error) => {
         console.log(error);
@@ -54,8 +58,8 @@ const SearchForm = () => {
           </button>
         </form>
       </div>
-
-      <h1>{}</h1>
+      <h1> {city.name} </h1>
+      <p>{country.cod}</p>
     </>
   );
 };

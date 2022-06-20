@@ -72,7 +72,7 @@ const ActualWeather = () => {
             <p>Max</p>
           </div>
 
-          <div className="wind">
+          <div className="wind_speed">
             <p>{wind}MPS</p>
             <p>Wind Speed</p>
           </div>

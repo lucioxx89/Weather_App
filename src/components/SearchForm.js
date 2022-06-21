@@ -24,11 +24,12 @@ const SearchForm = () => {
       .then((data) => {
         console.log(data, "List from city API");
         setCity(data);
-        setCountry(data);
+        setCountry(data.sys);
       })
       .catch((error) => {
         console.log(error);
       });
+    // setCity("");
   };
 
   const onChangeHandler = (event) => {
@@ -39,7 +40,6 @@ const SearchForm = () => {
   //     event.preventDefault();
   //     // console.log(city);
   //   };
-  //   setCity("");
 
   return (
     <>
@@ -59,7 +59,7 @@ const SearchForm = () => {
         </form>
       </div>
       <h1> {city.name} </h1>
-      <p>{country.cod}</p>
+      <p>{country.country}</p>
       <p></p>
     </>
   );

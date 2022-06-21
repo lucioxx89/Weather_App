@@ -45,7 +45,7 @@ const ActualWeather = () => {
         <div className="top_info">
           {" "}
           <div className="location">{city}</div>
-          <div className="actual_temperature">{Temperature_Rounded}°</div>
+          <div className="actual_temperature">{Temperature_Rounded}℃</div>
           <div className="weather_description">
             {" "}
             {weatherDescriptionCapLetter}{" "}
@@ -58,17 +58,17 @@ const ActualWeather = () => {
             <p>Humidity</p>{" "}
           </div>
           <div className="feels_like">
-            <p> {FeelsLike_Rounded}°</p>
+            <p> {FeelsLike_Rounded}℃</p>
             <p> Feels like </p>
           </div>
 
           <div className="temp_min">
-            <p>{Min_Temperature_Rounded}°</p>
+            <p>{Min_Temperature_Rounded}℃</p>
             <p>Min</p>
           </div>
 
           <div className="temp_max">
-            <p>{Max_Temperature_Rounded}°</p>
+            <p>{Max_Temperature_Rounded}℃</p>
             <p>Max</p>
           </div>
 

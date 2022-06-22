@@ -28,6 +28,8 @@
   font-size: 1.6rem;
   position: relative;
   right: -80%;
+  transform-origin: 0 0;
+  transform: rotate(270deg);
 }
 
 .humidity {

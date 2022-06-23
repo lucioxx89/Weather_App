@@ -5,6 +5,7 @@ import WeatherForecast from "./WeatherForecast";
 import "./searchForm.css";
 
 const SearchForm = () => {
+  const [loading, setLoading] = useState("");
   const [location, setLocation] = useState("");
   const [city, setCity] = useState("");
   //   const [country, setCountry] = useState("");
@@ -21,6 +22,7 @@ const SearchForm = () => {
   const [feelsLike, setFeelsLike] = useState("");
 
   const onSubmitHandler = (event) => {
+    setLoading("Loading...");
     event.preventDefault();
 
     fetch(
@@ -33,6 +35,9 @@ const SearchForm = () => {
 
       .then((data) => {
         console.log(data, "List from city API");
+
+        setLoading("");
+
         setCity(data);
         // setCountry(data.sys);
 
@@ -50,6 +55,7 @@ const SearchForm = () => {
         console.log(error);
       });
     setLocation(""); //set it back to empty string so input is empty again
+    // setLoading(" ");
   };
 
   const onChangeHandler = (event) => {
@@ -81,6 +87,8 @@ const SearchForm = () => {
           </button>
         </form>
       </div>
+
+      <p className="loading">{loading}</p>
 
       <WeatherForecast
         city={city}

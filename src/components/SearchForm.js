@@ -5,12 +5,11 @@ import WeatherForecast from "./WeatherForecast";
 import "./searchForm.css";
 
 const SearchForm = () => {
+  const API_KEY = "24c3564ab328937258934fca6c93f832";
   const [loading, setLoading] = useState("");
   const [location, setLocation] = useState("");
   const [city, setCity] = useState("");
   //   const [country, setCountry] = useState("");
-
-  const API_KEY = "24c3564ab328937258934fca6c93f832";
 
   //copied
   const [temperature, setTemperature] = useState("");
@@ -20,6 +19,18 @@ const SearchForm = () => {
   const [tempMax, setTempMax] = useState("");
   const [wind, setWind] = useState("");
   const [feelsLike, setFeelsLike] = useState("");
+
+  //   const [state, setState] = useState({
+  //     city: "",
+  //     location: "",
+  //     temperature: "",
+  //     humidity: "",
+  //     weatherDescription: "",
+  //     tempMin: "",
+  //     temp_max: "",
+  //     wind: "",
+  //     feelsLike: "",
+  //   });
 
   const onSubmitHandler = (event) => {
     setLoading("Loading...");

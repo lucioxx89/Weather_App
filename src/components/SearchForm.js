@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 
 import WeatherForecast from "./WeatherForecast";
 
@@ -93,7 +93,7 @@ const SearchForm = () => {
     weatherDescription.charAt(0).toUpperCase() + weatherDescription.slice(1);
 
   return (
-    <>
+    <div className="main_body">
       <div className="search_bar">
         <form onSubmit={onSubmitHandler}>
           <input
@@ -124,7 +124,7 @@ const SearchForm = () => {
         Max_Temperature_Rounded={Max_Temperature_Rounded}
         wind={wind}
       />
-    </>
+    </div>
   );
 };
 

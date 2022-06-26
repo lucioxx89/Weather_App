@@ -11,7 +11,7 @@ const SearchForm = () => {
 
   const [location, setLocation] = useState("");
   const [city, setCity] = useState("");
-  //   const [country, setCountry] = useState("");
+  const [country, setCountry] = useState("");
   const [temperature, setTemperature] = useState("");
   const [humidity, setHumidity] = useState("");
   const [weatherDescription, setWeatherDescription] = useState("");
@@ -52,8 +52,9 @@ const SearchForm = () => {
         setLoading("");
 
         setCity(data);
-        // setCountry(data.sys);
+
         setCity(data.name);
+        setCountry(data.sys);
         setTemperature(data.main.temp);
         setTempMin(data.main.temp_min);
         setTempMax(data.main.temp_max);
@@ -66,6 +67,7 @@ const SearchForm = () => {
         setLoading("");
         setError(error.message);
         setCity("");
+        setCountry("");
         setTemperature("");
         setTempMin("");
         setTempMax("");
@@ -76,7 +78,6 @@ const SearchForm = () => {
         console.log(error.message);
       });
     setLocation(""); //set it back to empty string so input is empty again
-    // setLoading(" ");
   };
 
   const onChangeHandler = (event) => {
@@ -114,6 +115,7 @@ const SearchForm = () => {
 
       <WeatherForecast
         city={city}
+        country={country}
         Temperature_Rounded={Temperature_Rounded}
         weatherDescriptionCapLetter={weatherDescriptionCapLetter}
         humidity={humidity}

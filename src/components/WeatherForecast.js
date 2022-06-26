@@ -7,13 +7,15 @@ const WeatherForecast = (props) => {
     <div className="weather_container">
       <div className="top_info">
         {" "}
-        <div className="location">{props.city}</div>
+        <div className="location">
+          {props.city}{" "}
+          <span className="country">({props.country.country})</span>
+        </div>
         <div className="actual_temperature">{props.Temperature_Rounded}℃</div>
         <div className="weather_description">
           {" "}
           {props.weatherDescriptionCapLetter}{" "}
         </div>
-        {/* <div className="country">{country.country}</div> */}
       </div>
 
       <div className="bottom_info">

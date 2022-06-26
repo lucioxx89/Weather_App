@@ -6,12 +6,12 @@ import "./searchForm.css";
 
 const SearchForm = () => {
   const API_KEY = "24c3564ab328937258934fca6c93f832";
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState("");
+
   const [location, setLocation] = useState("");
   const [city, setCity] = useState("");
   //   const [country, setCountry] = useState("");
-
-  //copied
   const [temperature, setTemperature] = useState("");
   const [humidity, setHumidity] = useState("");
   const [weatherDescription, setWeatherDescription] = useState("");
@@ -40,19 +40,19 @@ const SearchForm = () => {
       `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=metric`
     )
       .then((response) => {
-        if (!response.ok) throw response;
+        if (!response.ok || response.ok === 0)
+          throw Error("There was a problem with your request.Try again!");
         return response.json();
       })
 
       .then((data) => {
         console.log(data, "List from city API");
 
+        setError("");
         setLoading("");
 
         setCity(data);
         // setCountry(data.sys);
-
-        //coopied
         setCity(data.name);
         setTemperature(data.main.temp);
         setTempMin(data.main.temp_min);
@@ -63,7 +63,17 @@ const SearchForm = () => {
         setWind(data.wind.speed.toFixed());
       })
       .catch((error) => {
-        console.log(error);
+        setLoading("");
+        setError(error.message);
+        setCity("");
+        setTemperature("");
+        setTempMin("");
+        setTempMax("");
+        setFeelsLike("");
+        setHumidity("");
+        setWeatherDescription("");
+        setWind("");
+        console.log(error.message);
       });
     setLocation(""); //set it back to empty string so input is empty again
     // setLoading(" ");
@@ -100,6 +110,7 @@ const SearchForm = () => {
       </div>
 
       <p className="loading">{loading}</p>
+      <p className="error"> {error} </p>
 
       <WeatherForecast
         city={city}

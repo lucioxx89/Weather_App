@@ -8,7 +8,6 @@ const SearchForm = () => {
   const API_KEY = "24c3564ab328937258934fca6c93f832";
   const [error, setError] = useState("");
   const [loading, setLoading] = useState("");
-
   const [location, setLocation] = useState("");
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");

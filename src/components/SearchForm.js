@@ -37,6 +37,7 @@ const SearchForm = () => {
 
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=metric`
+      // `api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${API_KEY}&units=metric`
     )
       .then((response) => {
         if (!response.ok || response.ok === 0)

@@ -52,23 +52,20 @@ const NextDaysForecast = (props) => {
   }, []);
   // setLocation(""); //set it back to empty string so input is empty again
 
-  //   hoursForecast.map((item) => (
-  //     return <h1> Hola{item.visibility}</h1>;
-  //   ));
-
-  //   return (
-  //     <>
-  //       {/* {hoursForecast.map((item) => {
-  //         return <div>{item[0].visibility}</div>;
-  //       })} */}
-
-  //       {/* <div>
-  //         <div>Monday </div>
-  //         <div>Tuesday</div>
-  //         <div>Wednesday</div>
-  //       </div> */}
-  //     </>
-  //   );
+  return (
+    <div>
+      {hoursForecast.map((item, index) => {
+        return (
+          <div key={index}>
+            <div>
+              {" "}
+              Forecast: {item.dt_txt} {item.weather[0].main}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 };
 
 export default NextDaysForecast;

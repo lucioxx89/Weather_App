@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import WeatherForecast from "./WeatherForecast";
 
+import NextDaysForecast from "./NextDaysForecast";
+
 import "./searchForm.css";
 
 const SearchForm = () => {
@@ -37,7 +39,6 @@ const SearchForm = () => {
 
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=metric`
-      // `api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${API_KEY}&units=metric`
     )
       .then((response) => {
         if (!response.ok || response.ok === 0)
@@ -124,6 +125,8 @@ const SearchForm = () => {
         Max_Temperature_Rounded={Max_Temperature_Rounded}
         wind={wind}
       />
+
+      <NextDaysForecast location={location} />
     </div>
   );
 };

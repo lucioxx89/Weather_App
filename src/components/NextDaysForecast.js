@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
 
 const NextDaysForecast = (props) => {
-  //   const API_KEY = "24c3564ab328937258934fca6c93f832";
+  const API_KEY = "24c3564ab328937258934fca6c93f832";
 
   const [hoursForecast, setHoursForecast] = useState([]);
 
+  const location = props.location;
+  //   console.log(props, "props");
+  //   console.log(location, "location");
+
   useEffect(() => {
     fetch(
-      // `api.openweathermap.org/data/2.5/forecast?q=${props.location}&appid=${API_KEY}&units=metric`
-      "http://localhost:3000/forecast.json"
+      `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${API_KEY}&units=metric`
+      //   "http://localhost:3000/forecast.json"
     )
       .then((response) => {
         if (!response.ok || response.ok === 0)
@@ -49,7 +53,7 @@ const NextDaysForecast = (props) => {
         // setWind("");
         console.log(error.message);
       });
-  }, []);
+  }, [location]);
   // setLocation(""); //set it back to empty string so input is empty again
 
   return (
@@ -57,10 +61,9 @@ const NextDaysForecast = (props) => {
       {hoursForecast.map((item, index) => {
         return (
           <div key={index}>
-            <div>
-              {" "}
-              Forecast: {item.dt_txt} {item.weather[0].main}
-            </div>
+            <div>Date: {item.dt_txt}</div>
+            <div> Temp: {(item.main.temp / 1).toFixed(1)}</div>
+            <div> {item.weather[0].main}</div>
           </div>
         );
       })}

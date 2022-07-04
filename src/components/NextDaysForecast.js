@@ -6,8 +6,6 @@ const NextDaysForecast = (props) => {
   const [hoursForecast, setHoursForecast] = useState([]);
 
   const location = props.location;
-  //   console.log(props, "props");
-  //   console.log(location, "location");
 
   useEffect(() => {
     fetch(
@@ -24,37 +22,11 @@ const NextDaysForecast = (props) => {
         console.log(data.list, "Next days forecast");
 
         setHoursForecast(data.list);
-        // setError("");
-        // setLoading("");
-
-        // setCity(data);
-
-        // setCity(data.name);
-        // setCountry(data.sys);
-        // setTemperature(data.main.temp);
-        // setTempMin(data.main.temp_min);
-        // setTempMax(data.main.temp_max);
-        // setFeelsLike(data.main.feels_like.toFixed(1));
-        // setHumidity(data.main.humidity);
-        // setWeatherDescription(data.weather[0].description);
-        // setWind(data.wind.speed.toFixed());
       })
       .catch((error) => {
-        // setLoading("");
-        // setError(error.message);
-        // setCity("");
-        // setCountry("");
-        // setTemperature("");
-        // setTempMin("");
-        // setTempMax("");
-        // setFeelsLike("");
-        // setHumidity("");
-        // setWeatherDescription("");
-        // setWind("");
         console.log(error.message);
       });
   }, [location]);
-  // setLocation(""); //set it back to empty string so input is empty again
 
   return (
     <div>
@@ -63,7 +35,7 @@ const NextDaysForecast = (props) => {
           <div key={index}>
             <div>Date: {item.dt_txt}</div>
             <div> Temp: {(item.main.temp / 1).toFixed(1)}</div>
-            <div> {item.weather[0].main}</div>
+            <div> Description: {item.weather[0].main}</div>
           </div>
         );
       })}

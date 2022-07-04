@@ -31,11 +31,15 @@ const NextDaysForecast = (props) => {
   return (
     <div>
       {hoursForecast.map((item, index) => {
+        const time = item.dt_txt;
+        const forecastTemperature = (item.main.temp / 1).toFixed(1);
+        const forecastDescription = item.weather[0].main;
+
         return (
           <div key={index}>
-            <div>Date: {item.dt_txt}</div>
-            <div> Temp: {(item.main.temp / 1).toFixed(1)}</div>
-            <div> Description: {item.weather[0].main}</div>
+            <div>Date: {time}</div>
+            <div> Temp: {forecastTemperature}℃</div>
+            <div> Description: {forecastDescription}</div>
           </div>
         );
       })}

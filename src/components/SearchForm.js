@@ -21,18 +21,6 @@ const SearchForm = () => {
   const [wind, setWind] = useState("");
   const [feelsLike, setFeelsLike] = useState("");
 
-  //   const [state, setState] = useState({
-  //     city: "",
-  //     location: "",
-  //     temperature: "",
-  //     humidity: "",
-  //     weatherDescription: "",
-  //     tempMin: "",
-  //     temp_max: "",
-  //     wind: "",
-  //     feelsLike: "",
-  //   });
-
   const onSubmitHandler = (event) => {
     setLoading("Loading...");
     event.preventDefault();
@@ -53,7 +41,6 @@ const SearchForm = () => {
         setLoading("");
 
         setCity(data);
-
         setCity(data.name);
         setCountry(data.sys);
         setTemperature(data.main.temp);
@@ -132,42 +119,3 @@ const SearchForm = () => {
 };
 
 export default SearchForm;
-
-// {/* <div className="weather_container">
-//         <div className="top_info">
-//           {" "}
-//           <div className="location">{city}</div>
-//           <div className="actual_temperature">{Temperature_Rounded}℃</div>
-//           <div className="weather_description">
-//             {" "}
-//             {weatherDescriptionCapLetter}{" "}
-//           </div>
-//           {/* <div className="country">{country.country}</div> */}
-//         </div>
-
-//         <div className="bottom_info">
-//           <div className="humidity">
-//             <p>{humidity}%</p>
-//             <p>Humidity</p>{" "}
-//           </div>
-//           <div className="feels_like">
-//             <p> {FeelsLike_Rounded}℃</p>
-//             <p> Feels like </p>
-//           </div>
-
-//           <div className="temp_min">
-//             <p>{Min_Temperature_Rounded}℃</p>
-//             <p>Min</p>
-//           </div>
-
-//           <div className="temp_max">
-//             <p>{Max_Temperature_Rounded}℃</p>
-//             <p>Max</p>
-//           </div>
-
-//           <div className="wind_speed">
-//             <p>{wind}MPS</p>
-//             <p>Wind Speed</p>
-//           </div>
-//         </div>
-//       </div> */}

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import "./NextDaysForecast.css";
+
 const NextDaysForecast = (props) => {
   const API_KEY = "24c3564ab328937258934fca6c93f832";
 
@@ -9,8 +11,8 @@ const NextDaysForecast = (props) => {
 
   useEffect(() => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${API_KEY}&units=metric`
-      //   "http://localhost:3000/forecast.json"
+      //   `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${API_KEY}&units=metric`
+      "http://localhost:3000/forecast.json"
     )
       .then((response) => {
         if (!response.ok || response.ok === 0)
@@ -36,10 +38,15 @@ const NextDaysForecast = (props) => {
         const forecastDescription = item.weather[0].main;
 
         return (
-          <div key={index}>
-            <div>Date: {time}</div>
-            <div> Temp: {forecastTemperature}℃</div>
-            <div> Description: {forecastDescription}</div>
+          <div key={index} className="bottom_cards">
+            <div>
+              <div className="forecast_date">Date: {time}</div>
+              <div className="forecast_temp"> Temp: {forecastTemperature}℃</div>
+              <div className="forecast_description">
+                {" "}
+                Description: {forecastDescription}
+              </div>
+            </div>
           </div>
         );
       })}

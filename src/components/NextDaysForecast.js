@@ -11,8 +11,8 @@ const NextDaysForecast = (props) => {
 
   useEffect(() => {
     fetch(
-      //   `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${API_KEY}&units=metric`
-      "http://localhost:3000/forecast.json"
+      `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${API_KEY}&units=metric`
+      // "http://localhost:3000/forecast.json"
     )
       .then((response) => {
         if (!response.ok || response.ok === 0)

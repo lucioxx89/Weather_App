@@ -41,7 +41,10 @@ const NextDaysForecast = (props) => {
           <div key={index} className="bottom_cards">
             <div>
               <div className="forecast_date">Date: {time}</div>
-              <div className="forecast_temp"> Temp: {forecastTemperature}℃</div>
+              <div className="forecast_temp">
+                {" "}
+                Temperature: {forecastTemperature}℃
+              </div>
               <div className="forecast_description">
                 {" "}
                 Description: {forecastDescription}

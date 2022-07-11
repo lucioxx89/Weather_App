@@ -9,6 +9,7 @@ const NextDaysForecast = (props) => {
 
   const location = props.location;
 
+  // use effect
   useEffect(() => {
     fetch(
       `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${API_KEY}&units=metric`

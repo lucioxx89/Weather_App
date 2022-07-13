@@ -7,7 +7,6 @@ import SearchForm from "./components/SearchForm";
 function App() {
   return (
     <>
-      <h1> Weather App </h1>
       <SearchForm />
       {/* <NextDaysForecast /> */}
       {/* <ActualWeather /> */}

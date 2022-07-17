@@ -29,6 +29,9 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
+::placeholder {
+  color: black;
+}
 .search_bar_button {
   padding: 0.7rem 1.5rem;
   font-size: 1.2rem;

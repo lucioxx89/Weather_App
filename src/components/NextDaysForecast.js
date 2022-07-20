@@ -4,6 +4,7 @@ import "./NextDaysForecast.css";
 
 const NextDaysForecast = (props) => {
   const API_KEY = "24c3564ab328937258934fca6c93f832";
+  // const API_KEY = "4b2a61b0ed7044c28a2bb6975f2d0305";
 
   const [hoursForecast, setHoursForecast] = useState([]);
 
@@ -14,6 +15,8 @@ const NextDaysForecast = (props) => {
     fetch(
       `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${API_KEY}&units=metric`
       // "http://localhost:3000/forecast.json"
+
+      // `https://api.weatherbit.io/v2.0/forecast/daily?city=${location}&key=${API_KEY}`
     )
       .then((response) => {
         if (!response.ok || response.ok === 0)

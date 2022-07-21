@@ -3,8 +3,11 @@ import React, { useState, useEffect } from "react";
 import "./NextDaysForecast.css";
 
 const NextDaysForecast = (props) => {
-  const API_KEY = "24c3564ab328937258934fca6c93f832";
-  // const API_KEY = "4b2a61b0ed7044c28a2bb6975f2d0305";
+  // OPEN WEATHER API
+
+  // const API_KEY = "24c3564ab328937258934fca6c93f832";
+
+  const API_KEY = "4b2a61b0ed7044c28a2bb6975f2d0305";
 
   const [hoursForecast, setHoursForecast] = useState([]);
 
@@ -13,10 +16,10 @@ const NextDaysForecast = (props) => {
   // use effect
   useEffect(() => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${API_KEY}&units=metric`
+      // `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${API_KEY}&units=metric`
       // "http://localhost:3000/forecast.json"
 
-      // `https://api.weatherbit.io/v2.0/forecast/daily?city=${location}&key=${API_KEY}`
+      `https://api.weatherbit.io/v2.0/forecast/daily?city=${location}&key=${API_KEY}`
     )
       .then((response) => {
         if (!response.ok || response.ok === 0)
@@ -25,7 +28,7 @@ const NextDaysForecast = (props) => {
       })
 
       .then((data) => {
-        console.log(data.list, "Next days forecast");
+        console.log(data, "Next days forecast");
 
         setHoursForecast(data.list);
       })
@@ -36,7 +39,7 @@ const NextDaysForecast = (props) => {
 
   return (
     <div>
-      {hoursForecast.map((item, index) => {
+      {/* {hoursForecast.map((item, index) => {
         const time = item.dt_txt;
         const forecastTemperature = (item.main.temp / 1).toFixed(1);
         const forecastDescription = item.weather[0].main;
@@ -56,7 +59,7 @@ const NextDaysForecast = (props) => {
             </div>
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 };

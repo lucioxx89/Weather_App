@@ -38,7 +38,7 @@ const NextDaysForecast = (props) => {
   }, [location]);
 
   return (
-    <div>
+    <div className="bottom_container">
       {hoursForecast.slice(1, 6).map((item, index) => {
         const date = item.valid_date;
         const MinForecastTemperature = item.low_temp;
@@ -46,7 +46,7 @@ const NextDaysForecast = (props) => {
         const forecastDescription = item.weather.description;
 
         return (
-          <div key={index} className="bottom_container">
+          <div key={index}>
             <div className="forecast_card">
               <p className="forecast_date">{date}</p>
               <p className="forecast_temp">Min: {MinForecastTemperature}℃</p>

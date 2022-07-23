@@ -39,31 +39,19 @@ const NextDaysForecast = (props) => {
 
   return (
     <div>
-      {hoursForecast.map((item, index) => {
+      {hoursForecast.slice(1, 6).map((item, index) => {
         const date = item.valid_date;
         const MinForecastTemperature = item.low_temp;
         const MaxForecastTemperature = item.max_temp;
         const forecastDescription = item.weather.description;
 
         return (
-          <div key={index} className="bottom_cards">
-            <div>
-              <div className="forecast_date">Date: {date}</div>
-
-              <div className="forecast_temp">
-                {" "}
-                Min Temperature: {MinForecastTemperature}℃
-              </div>
-
-              <div className="forecast_temp">
-                {" "}
-                Max Temperature: {MaxForecastTemperature}℃
-              </div>
-
-              <div className="forecast_description">
-                {" "}
-                Description: {forecastDescription}
-              </div>
+          <div key={index} className="bottom_container">
+            <div className="forecast_card">
+              <p className="forecast_date">{date}</p>
+              <p className="forecast_temp">Min: {MinForecastTemperature}℃</p>
+              <p className="forecast_temp">Max: {MaxForecastTemperature}℃</p>
+              <p className="forecast_description">{forecastDescription}</p>
             </div>
           </div>
         );

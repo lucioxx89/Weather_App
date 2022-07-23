@@ -1,10 +1,19 @@
-.bottom_cards {
-  display: flex;
+.bottom_container {
   flex-direction: row;
   margin: auto;
   padding: 0 1rem;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 90%;
+}
+
+.forecast_card {
+  width: 70px;
+
+  padding: 30px;
+  margin: 0 5px;
+  border-radius: 5px;
+  transition: 0.5s;
 }
 
 .forecast_date {

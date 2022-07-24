@@ -3,15 +3,16 @@ import React from "react";
 // import ForecastList from "./components/ForecastList";
 import SearchForm from "./components/SearchForm";
 // import ActualWeather from "./components/ActualWeather";
+import "./index.css";
 
 function App() {
   return (
-    <>
+    <div className="full_body">
       <SearchForm />
       {/* <NextDaysForecast /> */}
       {/* <ActualWeather /> */}
       {/* <ForecastList /> */}
-    </>
+    </div>
   );
 }
 

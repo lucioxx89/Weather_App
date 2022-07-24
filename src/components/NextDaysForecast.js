@@ -7,6 +7,16 @@ const NextDaysForecast = (props) => {
 
   // const API_KEY = "24c3564ab328937258934fca6c93f832";
 
+  const weekday = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
   const API_KEY = "4b2a61b0ed7044c28a2bb6975f2d0305";
 
   const [hoursForecast, setHoursForecast] = useState([]);
@@ -40,7 +50,10 @@ const NextDaysForecast = (props) => {
   return (
     <div className="bottom_container">
       {hoursForecast.slice(1, 6).map((item, index) => {
-        const date = item.valid_date;
+        //to get the weekday
+        const date = new Date(item.valid_date);
+        let weekDay = weekday[date.getDay()];
+
         const MinForecastTemperature = item.low_temp;
         const MaxForecastTemperature = item.max_temp;
         const forecastDescription = item.weather.description;
@@ -48,7 +61,7 @@ const NextDaysForecast = (props) => {
         return (
           <div key={index}>
             <div className="forecast_card">
-              <p className="forecast_date">{date}</p>
+              <p className="forecast_date">{weekDay}</p>
               <p className="forecast_temp">Min: {MinForecastTemperature}℃</p>
               <p className="forecast_temp">Max: {MaxForecastTemperature}℃</p>
               <p className="forecast_description">{forecastDescription}</p>

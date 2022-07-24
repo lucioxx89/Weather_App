@@ -12,7 +12,7 @@
   max-height: 140px;
   padding: 1px;
   margin: 1.5rem auto;
-  border-radius: 5px solid grey;
+
   /* margin: 0 2px; */
 }
 
@@ -29,6 +29,10 @@
   margin: 0.5rem auto;
 }
 
+.forecast_icon {
+  width: 70px;
+  height: 60px;
+}
 .forecast_description {
   font-size: 1.2rem;
   margin: 0.5rem auto;

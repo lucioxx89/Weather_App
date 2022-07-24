@@ -49,14 +49,19 @@ const NextDaysForecast = (props) => {
 
   return (
     <div className="bottom_container">
-      {hoursForecast.slice(1, 6).map((item, index) => {
+      {hoursForecast.slice(1, 5).map((item, index) => {
         //to get the weekday
         const date = new Date(item.valid_date);
         let weekDay = weekday[date.getDay()];
 
         const MinForecastTemperature = item.low_temp;
         const MaxForecastTemperature = item.max_temp;
-        const forecastDescription = item.weather.description;
+        {
+          /* const forecastDescription = item.weather.description; */
+        }
+        const iconUrl = `https://www.weatherbit.io/static/img/icons/${item.weather.icon}.png`;
+
+        //www.weatherbit.io/static/img/icons/{icon_code}.png .
 
         return (
           <div key={index}>
@@ -64,7 +69,10 @@ const NextDaysForecast = (props) => {
               <p className="forecast_date">{weekDay}</p>
               <p className="forecast_temp">Min: {MinForecastTemperature}℃</p>
               <p className="forecast_temp">Max: {MaxForecastTemperature}℃</p>
-              <p className="forecast_description">{forecastDescription}</p>
+              <p>
+                <img className="forecast_icon" src={iconUrl} alt="icon" />
+              </p>
+              {/* <p className="forecast_description">{forecastDescription}</p> */}
             </div>
           </div>
         );

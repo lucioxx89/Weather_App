@@ -20,6 +20,7 @@ const SearchForm = () => {
   const [tempMax, setTempMax] = useState("");
   const [wind, setWind] = useState("");
   const [feelsLike, setFeelsLike] = useState("");
+  const [icon, setIcon] = useState("");
 
   const onSubmitHandler = (event) => {
     setLoading("Loading...");
@@ -49,6 +50,8 @@ const SearchForm = () => {
         setFeelsLike(data.main.feels_like.toFixed(1));
         setHumidity(data.main.humidity);
         setWeatherDescription(data.weather[0].description);
+
+        setLocation();
         setWind(data.wind.speed.toFixed());
       })
       .catch((error) => {

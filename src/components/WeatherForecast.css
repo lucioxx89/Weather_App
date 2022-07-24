@@ -1,21 +1,21 @@
 .loading {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .error {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   display: flex;
   justify-content: center;
   align-items: center;
   color: crimson;
 }
 .weather_container {
-  height: 50vh;
-  max-width: 700px;
-  max-height: 700px;
+  /* height: 50vh; */
+  max-width: 750px;
+  max-height: 350px;
   margin: auto;
   padding: 0 1rem;
   position: relative;
@@ -76,8 +76,9 @@
   justify-content: space-evenly;
   text-align: center;
   width: 90%;
+
   /* margin: 1rem auto; */
-  padding: 1rem;
+  padding: 0.2rem;
   border-radius: 12px;
   /* background-color: paleturquoise; */
   background-color: rgba(234, 180, 92, 0.899);

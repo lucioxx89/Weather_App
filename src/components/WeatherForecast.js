@@ -5,6 +5,10 @@ import "./WeatherForecast.css";
 const WeatherForecast = ({ currentWeatherData }) => {
   // let { currentWeatherData } = props;
 
+  if (!currentWeatherData.name) {
+    return <div></div>;
+  }
+
   // / const Temperature_Rounded = Number(temperature / 1).toFixed(1);
   // // const FeelsLike_Rounded = Number(feelsLike / 1).toFixed(1);
   // // const Min_Temperature_Rounded = Number(tempMin / 1).toFixed(1);

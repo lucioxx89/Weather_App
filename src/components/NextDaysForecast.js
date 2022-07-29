@@ -21,7 +21,7 @@ const NextDaysForecast = ({ forecastWeatherData }) => {
 
   // return (
   //   <div className="bottom_container">
-  //     {hoursForecast.slice(1, 5).map((item, index) => {
+  //     {forecastWeatherData.data.slice(1, 5).map((item, index) => {
   //       //to get the weekday
   //       const date = new Date(item.valid_date);
   //       let weekDay = weekday[date.getDay()];
@@ -50,11 +50,10 @@ const NextDaysForecast = ({ forecastWeatherData }) => {
   //       );
   //     })}
 
-  //     {/* {hoursForecast.map((item, index) => {
+  //     {forecastWeatherData.data.map((item, index) => {
   //       const time = item.dt_txt;
   //       const forecastTemperature = (item.main.temp / 1).toFixed(1);
   //       const forecastDescription = item.weather[0].main;
-
   //       return (
   //         <div key={index} className="bottom_cards">
   //           <div>
@@ -70,7 +69,7 @@ const NextDaysForecast = ({ forecastWeatherData }) => {
   //           </div>
   //         </div>
   //       );
-  //     })} */}
+  //     })}
   //   </div>
   // );
 };

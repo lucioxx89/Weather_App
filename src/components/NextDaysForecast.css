@@ -37,3 +37,14 @@
   font-size: 1.2rem;
   margin: 0.5rem auto;
 }
+@media screen and (max-width: 800px) {
+  .bottom_container {
+    display: block;
+    width: auto;
+    justify-content: left;
+  }
+
+  .forecast_card {
+    padding: 1px;
+  }
+}

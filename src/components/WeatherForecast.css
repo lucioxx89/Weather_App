@@ -83,3 +83,14 @@
   /* background-color: paleturquoise; */
   background-color: rgba(234, 180, 92, 0.899);
 }
+
+@media screen and (max-width: 800px) {
+  /* .social {
+    display: none; */
+  .bottom_info {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    width: auto;
+  }
+}

@@ -7,6 +7,10 @@
   align-items: center;
 }
 
+.forecast_card_container {
+  max-width: auto;
+}
+
 .forecast_card {
   width: 150px;
   max-height: 140px;
@@ -39,9 +43,14 @@
 }
 @media screen and (max-width: 800px) {
   .bottom_container {
-    display: block;
+    display: flex;
     width: auto;
     justify-content: left;
+  }
+
+  .bottom_container {
+    margin-left: 12px;
+    margin-top: 50px;
   }
 
   .forecast_card {

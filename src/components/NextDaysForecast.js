@@ -29,21 +29,16 @@ const NextDaysForecast = ({ forecastWeatherData }) => {
 
         const MaxForecastTemperature = item.max_temp;
 
-        const forecastDescription = item.weather.description;
-
         const iconUrl = `https://www.weatherbit.io/static/img/icons/${item.weather.icon}.png`;
 
         return (
-          <div key={index}>
-            <div className="forecast_card">
-              <p className="forecast_date">{weekDay}</p>
-              <p className="forecast_temp">Min: {MinForecastTemperature}℃</p>
-              <p className="forecast_temp">Max: {MaxForecastTemperature}℃</p>
-              <p>
-                <img className="forecast_icon" src={iconUrl} alt="icon" />
-              </p>
-              <p className="forecast_description">{forecastDescription}</p>
-            </div>
+          <div key={index} className="forecast_card">
+            <p className="forecast_date">{weekDay}</p>
+            <p className="forecast_temp">{MinForecastTemperature}℃</p>
+            <p className="forecast_temp">{MaxForecastTemperature}℃</p>
+            <p>
+              <img className="forecast_icon" src={iconUrl} alt="icon" />
+            </p>
           </div>
         );
       })}

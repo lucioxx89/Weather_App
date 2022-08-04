@@ -25,10 +25,11 @@ const WeatherForecast = ({ currentWeatherData }) => {
     currentWeatherData.main.temp_max / 1
   ).toFixed(1);
 
-  const weatherDescriptionCapLetter =
-    currentWeatherData.weather[0].description.charAt(0).toUpperCase() +
-    currentWeatherData.weather[0].description.slice(1);
+  // const weatherDescriptionCapLetter =
+  //   currentWeatherData.weather[0].description.charAt(0).toUpperCase() +
+  //   currentWeatherData.weather[0].description.slice(1);
 
+  const CurrentWeatherIconUrl = `http://openweathermap.org/img/w/${currentWeatherData.weather[0].icon}.png`;
   const wind = currentWeatherData.wind.speed.toFixed();
 
   return (
@@ -39,7 +40,11 @@ const WeatherForecast = ({ currentWeatherData }) => {
           <span className="country">({currentWeatherData.sys.country})</span>
         </div>
         <div className="actual_temperature">{Temperature_Rounded}℃</div>
-        <div className="weather_description">{weatherDescriptionCapLetter}</div>
+        {/* <div className="weather_description">{weatherDescriptionCapLetter}</div> */}
+        <div>
+          {/* // className="weather_description" */}
+          <img src={CurrentWeatherIconUrl} alt="icon" />
+        </div>
       </div>
 
       <div className="bottom_info">

@@ -16,6 +16,7 @@
   /* height: 50vh; */
   max-width: 750px;
   max-height: 350px;
+  margin-top: 30px;
   margin: auto;
   padding: 0 1rem;
   position: relative;
@@ -89,7 +90,7 @@
     display: none; */
 
   .weather_container {
-    margin-top: 70px;
+    margin-top: 50px;
   }
   .bottom_info {
     margin-top: 50px;
@@ -120,5 +121,9 @@
 
   .wind_speed {
     font-size: 1.2rem;
+  }
+
+  .weather_description {
+    font-size: 1.3rem;
   }
 }

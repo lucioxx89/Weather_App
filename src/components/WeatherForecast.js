@@ -39,12 +39,16 @@ const WeatherForecast = ({ currentWeatherData }) => {
           {currentWeatherData.name}
           <span className="country">({currentWeatherData.sys.country})</span>
         </div>
-        <div className="actual_temperature">{Temperature_Rounded}℃</div>
-        {/* <div className="weather_description">{weatherDescriptionCapLetter}</div> */}
-        <div>
-          {/* // className="weather_description" */}
-          <img src={CurrentWeatherIconUrl} alt="icon" />
+        <div className="actual_temperature">
+          {Temperature_Rounded}℃
+          <img
+            className="current_weather_icon"
+            src={CurrentWeatherIconUrl}
+            alt="icon"
+          />
         </div>
+        {/* <div className="weather_description">{weatherDescriptionCapLetter}</div> */}
+        <div>{/* // className="weather_description" */}</div>
       </div>
 
       <div className="bottom_info">

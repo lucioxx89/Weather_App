@@ -44,13 +44,18 @@
   font-size: 4rem;
 }
 
-.weather_description {
+/* .weather_description {
   font-size: 1.8rem;
 
   position: relative;
   right: -80%;
   transform-origin: 0 0;
   transform: rotate(270deg);
+} */
+
+.current_weather_icon {
+  width: 150px;
+  height: 140px;
 }
 
 .humidity {

@@ -42,6 +42,8 @@
 
 .actual_temperature {
   font-size: 4rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* .weather_description {
@@ -54,7 +56,7 @@
 } */
 
 .current_weather_icon {
-  width: 150px;
+  width: 180px;
   height: 140px;
 }
 
